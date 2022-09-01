@@ -21,3 +21,17 @@ section {
   height: 500px;
   background-color: rgb(244, 123, 123);
 }
+
+.photo {
+  background-image: url(../img/kostia.JPG);
+  height: 200px;
+  width: 400px;
+  background-size: cover;
+  /* background-position: bottom; */
+  border: 2px solid red;
+}
+
+.kostia {
+  height: 300px;
+  border: 2px solid blue;
+}
