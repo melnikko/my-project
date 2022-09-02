@@ -7,10 +7,28 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
+  background-color: rgb(209, 209, 209);
+}
+
+.nav {
+  background-color: rgb(192, 63, 63);
+  text-align: center;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
 }
 
 .h1 {
   background-color: yellowgreen;
+
 }
 
 ul:first-child:hover {
@@ -34,4 +52,19 @@ section {
 .kostia {
   height: 300px;
   border: 2px solid blue;
+}
+
+.go-top {
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  background-color: rgb(244, 123, 123);
+  color: white;
+  line-height: 80px;
+  text-align: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(56, 16, 16);
 }
