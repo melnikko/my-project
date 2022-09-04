@@ -10,18 +10,64 @@
   <title>Mate Academy</title>
 </head>
 <body id="page-top">
-  <nav class="nav">
+  <form action="" method="post" class="form">
+    <div class="form-field">
+      Email:
+      <input 
+      class="field" 
+      type="email" 
+      name="email" 
+      placeholder="enter username" 
+      required
+      >
+    </div>
+    <div class="form-field">
+      username:
+      <input class="field" type="text" name="username" placeholder="enter username" required>
+    </div>
+    <div class="form-field">
+      password:
+      <input class="field" type="password" name="password" placeholder="enter password" required minlength="5">
+    </div>
+    <select name="city" id="">
+      <option value="" disabled selected>choose the city</option>
+      <option value="Warsaw">Warsaw</option>
+      <option value="Kiev">Kiev</option>
+      <option value="New York">New York</option>
+    </select>
+    <div class="form-field">
+      <input 
+      class="field"
+      type="checkbox"
+      name="c"
+      required
+      >
+      I accept terms and conditions
+    </div>
+    <div class="form-field">
+      <input
+      class="field" 
+      type="checkbox" 
+      name="remember" 
+      checked
+      >
+      remember me
+    </div>
+    <button type="submit">Sign up</button>
+    <button type="reset">Reset</button>
+  </form>
+
+
+  <!-- <nav class="nav">
     <a href="#section-1">Section 1</a>
     <a href="#section-2">Section 2</a>
     <a href="#section-3">Section 3</a>
     <a href="#section-4">Section 4</a>
-  </nav>
+  </nav> -->
   <a href="#page-top" class="go-top">go top</a>
   <h1 id="h1" class="h1">Mate Academy</h1>
-  <!-- <img src="img/blackboard.svg" alt="">
-  <img src="img/blackboard-green.png" alt=""> -->
-  <div class="photo"></div>
-  <img src="img/kostia.JPG" alt="Kostia" class="kostia">
+  <!-- <div class="photo"></div>
+  <img src="img/kostia.JPG" alt="Kostia" class="kostia"> -->
   <h2>Lesson 1</h2>
   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quo alias obcaecati? Cumque voluptates adipisci ipsam consequuntur dignissimos dolore delectus tempore laudantium, aut repudiandae non perspiciatis reiciendis quo earum ad?</p>
   <h2>Lesson 2</h2>
