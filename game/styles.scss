@@ -1,0 +1,83 @@
+body {
+  background-color: gray;
+}
+
+$field-width: 400px; 
+$cell-height: $field-width / 3;
+$cell-width: $field-width / 3;
+
+
+.game {
+  border: 2px solid black;
+  width: $field-width;
+  position: relative;
+   
+
+  &__field {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__cell {
+    box-sizing: border-box;
+    height: $cell-height;
+    width: $cell-width;
+    border: 1px dashed black;
+  }
+
+  &__player {
+    $player-width: $cell-height * 0.8;
+    $player-height: $cell-width * 0.8;
+    $player-position: ($cell-height - $player-height) / 2;
+    $step: $cell-height;
+
+    position: absolute;
+    top: $player-position;
+    left: $player-position;
+    width: $player-width;
+    height: $player-height;
+    border-radius: 50%;
+
+    &_color-red
+    { 
+      background-color: red;
+
+        }
+    
+        &_col-3
+    { left: $player-position + ( 2 * $step) ;
+        }
+    
+        &_row-1
+    {
+        }
+    
+        &_color-green
+    { background-color: green;
+      
+        }
+    
+        &_col-1
+    {
+        }
+    
+        &_row-2
+    { top: $player-position + $step;
+        }
+    
+        &_color-blue
+    { background-color: blue;
+      
+      
+        }
+    
+        &_col-2
+    { left: $player-position + $step;
+        }
+    
+        &_row-3
+    { top: $player-position + ( 2 * $step);
+        } 
+
+  }
+}
