@@ -4,7 +4,7 @@ body {
 
 .game {
   border: 2px solid black;
-  width: 400px;
+  width: 300px;
   position: relative;
 }
 .game__field {
@@ -13,38 +13,56 @@ body {
 }
 .game__cell {
   box-sizing: border-box;
-  height: 133.3333333333px;
-  width: 133.3333333333px;
+  height: 100px;
+  width: 100px;
   border: 1px dashed black;
 }
 .game__player {
   position: absolute;
-  top: 13.3333333333px;
-  left: 13.3333333333px;
-  width: 106.6666666667px;
-  height: 106.6666666667px;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
-.game__player_color-red {
-  background-color: red;
-}
-.game__player_col-3 {
-  left: 280px;
-}
-.game__player_color-green {
-  background-color: green;
+.game__player_row-1 {
+  top: 10px;
 }
 .game__player_row-2 {
-  top: 146.6666666667px;
-}
-.game__player_color-blue {
-  background-color: blue;
-}
-.game__player_col-2 {
-  left: 146.6666666667px;
+  top: 110px;
 }
 .game__player_row-3 {
-  top: 280px;
+  top: 210px;
+}
+.game__player_row-4 {
+  top: 310px;
+}
+.game__player_row-5 {
+  top: 410px;
+}
+.game__player_col-1 {
+  left: 10px;
+}
+.game__player_col-2 {
+  left: 110px;
+}
+.game__player_col-3 {
+  left: 210px;
+}
+.game__player_color-red {
+  background-color: #f00;
+}
+.game__player_color-green {
+  background-color: #080;
+}
+.game__player_color-blue {
+  background-color: #00f;
+}
+
+h1, .title {
+  font-size: 20px;
+  font-weight: normal;
+  color: #000;
 }
 
 /*# sourceMappingURL=styles.css.map */
