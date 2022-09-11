@@ -9,7 +9,7 @@ $col-count: 3;
 $row-count: 5;
 
 
-
+/* #region test */
 .game {
   border: 2px solid black;
   width: $field-width;
@@ -79,3 +79,4 @@ $row-count: 5;
 h1 {
   @extend %large-text;
 }
+/* #endregion */
