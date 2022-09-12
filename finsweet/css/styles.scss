@@ -1,3 +1,5 @@
+$bgc-blue: #EDF7FF;
+
 body {
   font-family: Poppins, sans-serif;
   font-weight: 500;
@@ -76,7 +78,7 @@ $header-height: 84px;
 .header-section {
 
   &__main-info {
-    background-color: #DCEAF5;
+    background-color: $bgc-blue;
   }
 }
 .main-info {
@@ -142,22 +144,10 @@ $header-height: 84px;
 }
 /* #endregion */
 
-.main {
-  // height: 1500px;
-}
-
 /* #region HELP section */
-.main {
-
-  &__container {
-    margin-top: 96px;
-  }
-
-  &__help-section {
-  }
-}
 
 .help-section {
+  padding: 96px 0;
 
   &__title {
     font-weight: 600;
@@ -182,7 +172,6 @@ $header-height: 84px;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 64px;
-    padding-bottom: 96px;
   }
 
   &__article {
@@ -211,3 +200,69 @@ $header-height: 84px;
     color: #F58A07;
   }
 }
+/* #endregion */
+
+/* #region Solution section */
+
+.solution-section { 
+
+  background-color: $bgc-blue;
+  padding: 96px 0;
+
+  &__text-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    width: 50%;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #0D1317;
+    margin-top: 0;
+  }
+
+  &__subtitle {
+    width: 45%;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #1D3444;
+    margin-top: 0;
+  }
+
+  &__cards-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    
+  }
+}
+.card {
+  background-color: white;
+  width: 400px;
+  border-radius: 20px;
+  padding: 48px 26px 37px 39px;
+  box-sizing: border-box;
+
+  &__img {
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #0D1317;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    line-height: 28px;
+    color: #5B5B5B;
+  }
+}
+/* #endregion */
+
