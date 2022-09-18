@@ -213,13 +213,73 @@
 // console.log(data)
 // // end tast
 
-const data = [5, 10, 'Shopping', 20, 'Homework']; // записать в result масив data наоборот
-const result = [];
-let resultStart = 0;
+// const data = [5, 10, 'Shopping', 20, 'Homework']; // записать в result масив data наоборот
+// const result = [];
+// let resultStart = 0;
 
-for (let i = data.length - 1; i >= 0; i--) {
-  result[resultStart++] = data[i];
+// for (let i = data.length - 1; i >= 0; i--) {
+//   result[resultStart++] = data[i];
+// }
+// console.log(result);
+// // end записать в result масив data наоборот
+
+
+
+// let numberOfFilms = +prompt('How many movies have you watched ?', '');
+
+// let personalMovieBD = {
+//   'count': numberOfFilms,
+//   'movies': {},
+//   'actors': {},
+//   'genres': [],
+//   'privat': false
+// };
+
+// if (numberOfFilms < 10) {
+//   alert('Просмотрено мало фильмов');
+// } else if (numberOfFilms >= 10 && numberOfFilms < 30) {
+//   alert('Вы классический зритель');
+// } else if (numberOfFilms >= 30) {
+//   alert('Вы киноман');
+// } else {
+//   alert('Ошибка');
+// }
+
+
+// for (let i = 1; i <= 2; i++) {
+//   let recentFilm = prompt('What was your last movie you watch ?', ''),
+//       rateFilm = +prompt('Rate this movie from 0 to 10 ?', '');
+
+//   if (recentFilm != null && rateFilm != null && recentFilm != '' && rateFilm != '' && recentFilm.length < 50) {
+//     personalMovieBD.movies[recentFilm] = rateFilm;
+//   } else {
+//     i--;
+//   }
+// }
+
+
+
+let first = +prompt('Enter number', ''),
+    second = +prompt('Enter number two', '');
+
+function showMessage(number, number2) {
+  alert(`Sum = ${number * number2}`);
+  return number * number2;
 }
-console.log(result);
-// end записать в result масив data наоборот
+
+let summ = showMessage(first, second);
+let discount = 0.9;
+
+function discountSum (summ, discount) {
+  return summ * discount;
+};
+let totalDiscount = discountSum(summ, discount);
+console.log(totalDiscount);
+
+
+// showMessage(first, second);
+
+// let calc = (num1, num2) => num1 + num2; // стрелочная функция
+// alert(calc(first, second));
+
 
