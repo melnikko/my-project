@@ -48,16 +48,6 @@
 // console.log(loadGrain(bargeOne));
 // console.log(loadGrain(bargeTwo));
 
-// let numberOfFilms = +prompt('How many movies have you watched ?', '');
-// alert(`You watched ${numberOfFilms} movies`);
-
-// let personalMovieBD = {
-//   'count': numberOfFilms,
-//   'movies': {},
-//   'actors': {},
-//   'genres': [],
-//   'privat': false
-// };
 // let recentFilm = prompt('What was your last movie you watch ?', ''),
 //     rateFilm = +prompt('Rate this movie from 0 to 10 ?', '');
 
@@ -300,37 +290,189 @@
 
 // console.log(returnNeighboringNumbers(5));
 
-let num1 = 3;
-let num2 = '3';
+// let num1 = 3;
+// let num2 = '3';
 
-function getMathResult(num1, num2) {
-  if (typeof(num2) !== 'number' || num2 <= 0) {
-    return num1;
-  }
+// function getMathResult(num1, num2) {
+//   if (typeof(num2) !== 'number' || num2 <= 0) {
+//     return num1;
+//   }
 
-  let result = '';
-  for (let i = 1; i <= num2; i++) {
-    if (i < num2) {
-      result += `${num1 * i}---`;
+//   let result = '';
+//   for (let i = 1; i <= num2; i++) {
+//     if (i < num2) {
+//       result += `${num1 * i}---`;
+//     } else {
+//       result += `${num1 * i}`;
+//     }
+//   }
+//   return result;
+// }
+
+// ===================== Functions ==================
+
+// let numberOfFilms;
+// alert(`You watched ${numberOfFilms} movies`);
+// let personalMovieBD = {
+//   'count': numberOfFilms,
+//   'movies': {},
+//   'actors': {},
+//   'genres': [],
+//   'privat': false
+// };
+
+// function start() {
+//   numberOfFilms = +prompt('How many movies have you watched ?', '');
+//   while (numberOfFilms == '' || numberOfFilms === null || isNaN(numberOfFilms)) {
+//     alert('Enter number of movies');
+//     numberOfFilms = +prompt('How many movies have you watched ?', '');
+//   }
+// }
+// start();
+
+// function rememberMyFilms() {
+//   for (let i = 1; i <= 2; i++) {
+//     let recentFilm = prompt('What was your last movie you watch ?', ''),
+//         rateFilm = +prompt('Rate this movie from 0 to 10 ?', '');
+
+//     if (recentFilm != null && rateFilm != null && recentFilm != '' && rateFilm != '' && recentFilm.length < 50) {
+//       personalMovieBD.movies[recentFilm] = rateFilm;
+//     } else {
+//       i--;
+//     }
+//   }
+// }
+// rememberMyFilms();
+
+// function detectPersonalLevel() {
+//   if (numberOfFilms < 10) {
+//     alert('Просмотрено мало фильмов');
+//   } else if (numberOfFilms >= 10 && numberOfFilms < 30) {
+//     alert('Вы классический зритель');
+//   } else if (numberOfFilms >= 30) {
+//     alert('Вы киноман');
+//   } else {
+//     alert('Ошибка');
+//   }
+// }
+// detectPersonalLevel()
+
+// function showMyBd(hidden) {
+//   if (!hidden) {
+//     console.log(personalMovieBD)
+//   }
+// }
+// showMyBd(personalMovieBD.privat);
+
+// function writeYourGeners() {
+//   for (let i = 1; i <= 3; i++) {
+//     personalMovieBD.genres[i - 1] = prompt(`Ваш любимый жанр по номером ${i}`);
+//   }
+// }
+// writeYourGeners();
+
+// ===================== END Functions ==================
+
+// function getCoupeNumber(seatNumber) {
+//   if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+//       return "Ошибка. Проверьте правильность введенного номера места";
+//   }
+
+//   if (seatNumber === 0 || seatNumber > 36) {
+//       return "Таких мест в вагоне не существует";
+//   }
+
+//   return Math.ceil(seatNumber / 4);
+//   // тут очень много вариантов решения, но выбрал один из элегантных :)
+// }
+
+// getCoupeNumber(33);
+
+// let number = 61;
+// const hour = 60;
+
+// if (number < hour) {
+//   const lastDigit = number % 10;
+//   if (lastDigit === 1) {
+//     console.log(`Это ${number} минута`)
+//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+//     console.log(`Это ${number} минуты`)
+//   } else {
+//     console.log(`Это ${number} минут`)
+//   }
+// }
+// if (number >= hour) {
+//   let minutes = number - (Math.floor(number / hour) * hour);
+//   let countOfHours = Math.floor(number / hour);
+//   const lastDigit = countOfHours % 10;
+//   if (lastDigit === 1) {
+//     console.log(`Это ${countOfHours} час ${minutes} минут`)
+//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+//     console.log(`Это ${countOfHours} часа ${minutes} минут`)
+//   } else {
+//     console.log(`Это ${countOfHours} часов ${minutes} минут`)
+//   }
+// }
+
+
+// let number = 1000;
+// const hour = 60;
+// let str = '';
+// if (number > 0) {
+//   let minutes = number - (Math.floor(number / hour) * hour);
+//   let countOfHours = Math.floor(number / hour);
+//   const lastDigit = countOfHours % 10;
+//   if (lastDigit === 1) {
+//     str += (`Это ${countOfHours} час `)
+//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+//     str += (`Это ${countOfHours} часа `)
+//   } else {
+//     str += (`Это ${countOfHours} часов `)
+//   }
+// };
+
+// if (number > 0) {
+//   let minutes = number - (Math.floor(number / hour) * hour);
+//   const lastDigit = minutes % 10;
+//   if (lastDigit === 1) {
+//     str += (`${minutes} минута`)
+//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+//     str += (`${minutes} минуты`)
+//   } else {
+//     str += (`${minutes} минут`)
+//   }
+// }
+
+
+function getTimeFromMinutes(number) {
+  const hour = 60;
+  let str = 'Это ';
+  if (number > 59) {
+    let minutes = number - (Math.floor(number / hour) * hour);
+    let countOfHours = Math.floor(number / hour);
+    const lastDigit = countOfHours % 10;
+    if (lastDigit === 1) {
+      str += (`${countOfHours} час `)
+    } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+      str += (`${countOfHours} часа `)
     } else {
-      result += `${num1 * i}`;
+      str += (`${countOfHours} часов `)
     }
-  }
-  return result;
+  };
+
+  if (number > 0) {
+    let minutes = number - (Math.floor(number / hour) * hour);
+    // console.log(minutes);
+    const lastDigit = minutes % 10;
+    if (lastDigit === 1) {
+      str += (`${minutes} минута`)
+    } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+      str += (`${minutes} минуты`)
+    } else {
+      str += (`${minutes} минут`)
+    }
+  } 
+  return str;
 }
 
-console.log(getMathResult(num1, num2));
-
-let str = 'Hello my name is Kostia';
-console.log(str.slice(14, 16));
-console.log(str.substr(9));
-console.log(str.length);
-
-let num = 12.4;
-console.log(Math.round(num));
-
-let test = '12.6px';
-console.log(parseInt(test));
-console.log(parseFloat(test));
-
-
+console.log(getTimeFromMinutes(60));
