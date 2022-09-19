@@ -388,88 +388,40 @@
 
 // getCoupeNumber(33);
 
-// let number = 61;
-// const hour = 60;
-
-// if (number < hour) {
-//   const lastDigit = number % 10;
-//   if (lastDigit === 1) {
-//     console.log(`Это ${number} минута`)
-//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-//     console.log(`Это ${number} минуты`)
-//   } else {
-//     console.log(`Это ${number} минут`)
-//   }
-// }
-// if (number >= hour) {
-//   let minutes = number - (Math.floor(number / hour) * hour);
-//   let countOfHours = Math.floor(number / hour);
-//   const lastDigit = countOfHours % 10;
-//   if (lastDigit === 1) {
-//     console.log(`Это ${countOfHours} час ${minutes} минут`)
-//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-//     console.log(`Это ${countOfHours} часа ${minutes} минут`)
-//   } else {
-//     console.log(`Это ${countOfHours} часов ${minutes} минут`)
-//   }
-// }
-
-
-// let number = 1000;
-// const hour = 60;
-// let str = '';
-// if (number > 0) {
-//   let minutes = number - (Math.floor(number / hour) * hour);
-//   let countOfHours = Math.floor(number / hour);
-//   const lastDigit = countOfHours % 10;
-//   if (lastDigit === 1) {
-//     str += (`Это ${countOfHours} час `)
-//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-//     str += (`Это ${countOfHours} часа `)
-//   } else {
-//     str += (`Это ${countOfHours} часов `)
-//   }
-// };
-
-// if (number > 0) {
-//   let minutes = number - (Math.floor(number / hour) * hour);
-//   const lastDigit = minutes % 10;
-//   if (lastDigit === 1) {
-//     str += (`${minutes} минута`)
-//   } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-//     str += (`${minutes} минуты`)
-//   } else {
-//     str += (`${minutes} минут`)
-//   }
-// }
 
 
 function getTimeFromMinutes(number) {
+
+  if (typeof(number) !== 'number' || number < 0 || !Number.isInteger(number)) {
+    return "Ошибка, проверьте данные";
+  }
+
   const hour = 60;
-  let str = 'Это ';
+  let str = 'Это';
   if (number > 59) {
-    let minutes = number - (Math.floor(number / hour) * hour);
-    let countOfHours = Math.floor(number / hour);
-    const lastDigit = countOfHours % 10;
+    let minutes = number - (Math.floor(number / hour) * hour); // выводит столько минут c вычетом часов
+    let countOfHours = Math.floor(number / hour);// выводит сколько полных часов 1,2,3...
+    const lastDigit = countOfHours % 10; // определяет последнюю цифру числа
     if (lastDigit === 1) {
-      str += (`${countOfHours} час `)
+      str += (` ${countOfHours} час`)
     } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-      str += (`${countOfHours} часа `)
+      str += (` ${countOfHours} часа`)
     } else {
-      str += (`${countOfHours} часов `)
+      str += (` ${countOfHours} часов`)
     }
   };
 
   if (number > 0) {
-    let minutes = number - (Math.floor(number / hour) * hour);
-    // console.log(minutes);
+    let minutes = number - (Math.floor(number / hour) * hour); // выводит столько минут c вычетом часов
     const lastDigit = minutes % 10;
     if (lastDigit === 1) {
-      str += (`${minutes} минута`)
+      str += (` ${minutes} минута`)
     } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-      str += (`${minutes} минуты`)
+      str += (` ${minutes} минуты`)
+    } else if (minutes === 0) {
+      str += '';
     } else {
-      str += (`${minutes} минут`)
+      str += (` ${minutes} минут`)
     }
   } 
   return str;
