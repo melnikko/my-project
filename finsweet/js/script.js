@@ -259,27 +259,78 @@
 
 
 
-let first = +prompt('Enter number', ''),
-    second = +prompt('Enter number two', '');
+// let first = +prompt('Enter number', ''),
+//     second = +prompt('Enter number two', '');
 
-function showMessage(number, number2) {
-  alert(`Sum = ${number * number2}`);
-  return number * number2;
-}
+// function showMessage(number, number2) {
+//   alert(`Sum = ${number * number2}`);
+//   return number * number2;
+// }
 
-let summ = showMessage(first, second);
-let discount = 0.9;
+// let summ = showMessage(first, second);
+// let discount = 0.9;
 
-function discountSum (summ, discount) {
-  return summ * discount;
-};
-let totalDiscount = discountSum(summ, discount);
-console.log(totalDiscount);
+// function discountSum (summ, discount) {
+//   return summ * discount;
+// };
+// let totalDiscount = discountSum(summ, discount);
+// console.log(totalDiscount);
 
 
 // showMessage(first, second);
 
 // let calc = (num1, num2) => num1 + num2; // стрелочная функция
 // alert(calc(first, second));
+
+// let userName = prompt('Enter your name', '');
+// function sayHello(name) {
+//   alert(`Hello, ${name}!`)
+// }
+
+// sayHello(userName);
+
+// let arr = [];
+
+// function returnNeighboringNumbers(number) {
+//   for (let i = -1; i < 2; i++) {
+//     arr[i + 1] = i + number;
+//   }
+//   return arr
+// }
+
+// console.log(returnNeighboringNumbers(5));
+
+let num1 = 3;
+let num2 = '3';
+
+function getMathResult(num1, num2) {
+  if (typeof(num2) !== 'number' || num2 <= 0) {
+    return num1;
+  }
+
+  let result = '';
+  for (let i = 1; i <= num2; i++) {
+    if (i < num2) {
+      result += `${num1 * i}---`;
+    } else {
+      result += `${num1 * i}`;
+    }
+  }
+  return result;
+}
+
+console.log(getMathResult(num1, num2));
+
+let str = 'Hello my name is Kostia';
+console.log(str.slice(14, 16));
+console.log(str.substr(9));
+console.log(str.length);
+
+let num = 12.4;
+console.log(Math.round(num));
+
+let test = '12.6px';
+console.log(parseInt(test));
+console.log(parseFloat(test));
 
 
