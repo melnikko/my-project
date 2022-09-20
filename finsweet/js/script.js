@@ -389,42 +389,85 @@
 // getCoupeNumber(33);
 
 
+// функция которая преобразует число во время
+// function getTimeFromMinutes(number) {
 
-function getTimeFromMinutes(number) {
+//   if (typeof(number) !== 'number' || number < 0 || !Number.isInteger(number)) {
+//     return "Ошибка, проверьте данные";
+//   }
 
-  if (typeof(number) !== 'number' || number < 0 || !Number.isInteger(number)) {
-    return "Ошибка, проверьте данные";
+//   const hour = 60;
+//   let str = 'Это';
+//   if (number > 59) {
+//     let minutes = number - (Math.floor(number / hour) * hour); // выводит столько минут c вычетом часов
+//     let countOfHours = Math.floor(number / hour);// выводит сколько полных часов 1,2,3...
+//     const lastDigit = countOfHours % 10; // определяет последнюю цифру числа
+//     if (lastDigit === 1) {
+//       str += (` ${countOfHours} час`)
+//     } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+//       str += (` ${countOfHours} часа`)
+//     } else {
+//       str += (` ${countOfHours} часов`)
+//     }
+//   };
+
+//   if (number > 0) {
+//     let minutes = number - (Math.floor(number / hour) * hour); // выводит столько минут c вычетом часов
+//     const lastDigit = minutes % 10;
+//     if (lastDigit === 1) {
+//       str += (` ${minutes} минута`)
+//     } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
+//       str += (` ${minutes} минуты`)
+//     } else if (minutes === 0) {
+//       str += '';
+//     } else {
+//       str += (` ${minutes} минут`)
+//     }
+//   } 
+//   return str;
+// }
+
+// console.log(getTimeFromMinutes(60));
+
+// функция которая выводит самое большое число
+// function findMaxNumber(first, second, third, forth) {
+//   // первое решение
+//   let arr = [first, second, third, forth];
+//   let bigNumber = Math.max(...arr);
+//   // return bigNumber;
+//   // второе решение
+//   return Math.max(first, second ,third, forth);
+// }
+// console.log(findMaxNumber(1, 22.5, 3, 4))
+
+
+
+// Создайте функцию, которая будет принимать в себя один аргумент-целое положительное число. Она должна возвращать строку, в которой будут через пробел выведены числа Фибоначчи. Причем, их количество должно быть равно переданному аргументу.
+// где первые два числа равны 0 и 1, а каждое последующее число равно сумме двух предыдущих чисел
+// числа Фибоначчи
+
+function fib(num) {
+  if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+      return "";
   }
 
-  const hour = 60;
-  let str = 'Это';
-  if (number > 59) {
-    let minutes = number - (Math.floor(number / hour) * hour); // выводит столько минут c вычетом часов
-    let countOfHours = Math.floor(number / hour);// выводит сколько полных часов 1,2,3...
-    const lastDigit = countOfHours % 10; // определяет последнюю цифру числа
-    if (lastDigit === 1) {
-      str += (` ${countOfHours} час`)
-    } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-      str += (` ${countOfHours} часа`)
-    } else {
-      str += (` ${countOfHours} часов`)
-    }
-  };
+  let result = '';
+  let first = 0;
+  let second = 1;
 
-  if (number > 0) {
-    let minutes = number - (Math.floor(number / hour) * hour); // выводит столько минут c вычетом часов
-    const lastDigit = minutes % 10;
-    if (lastDigit === 1) {
-      str += (` ${minutes} минута`)
-    } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4){
-      str += (` ${minutes} минуты`)
-    } else if (minutes === 0) {
-      str += '';
-    } else {
-      str += (` ${minutes} минут`)
-    }
-  } 
-  return str;
+  for (let i = 0; i < num; i++) {
+      if (i + 1 === num) {
+          result += `${first}`;
+          // Без пробела в конце
+      } else {
+          result += `${first} `; // 0, 1, 1, 2, 3, 5, 8     
+      }
+
+      let third = first + second; // 1, 2, 3, 5, 8, 13, 21   
+      first = second; // 1, 1, 2, 3, 5, 8, 13    
+      second = third; // 1, 2, 3, 5, 8, 13, 21    
+  }
+
+  return result;
 }
-
-console.log(getTimeFromMinutes(60));
+console.log(fib(7));
