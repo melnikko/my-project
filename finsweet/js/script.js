@@ -446,28 +446,43 @@
 // где первые два числа равны 0 и 1, а каждое последующее число равно сумме двух предыдущих чисел
 // числа Фибоначчи
 
-function fib(num) {
-  if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
-      return "";
-  }
+// function fib(num) {
+//   if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+//       return "";
+//   }
 
-  let result = '';
-  let first = 0;
-  let second = 1;
+//   let result = '';
+//   let first = 0;
+//   let second = 1;
 
-  for (let i = 0; i < num; i++) {
-      if (i + 1 === num) {
-          result += `${first}`;
-          // Без пробела в конце
-      } else {
-          result += `${first} `; // 0, 1, 1, 2, 3, 5, 8     
-      }
+//   for (let i = 0; i < num; i++) {
+//       if (i + 1 === num) {
+//           result += `${first}`;
+//           // Без пробела в конце
+//       } else {
+//           result += `${first} `; // 0, 1, 1, 2, 3, 5, 8     
+//       }
 
-      let third = first + second; // 1, 2, 3, 5, 8, 13, 21   
-      first = second; // 1, 1, 2, 3, 5, 8, 13    
-      second = third; // 1, 2, 3, 5, 8, 13, 21    
-  }
+//       let third = first + second; // 1, 2, 3, 5, 8, 13, 21   
+//       first = second; // 1, 1, 2, 3, 5, 8, 13    
+//       second = third; // 1, 2, 3, 5, 8, 13, 21    
+//   }
 
-  return result;
+//   return result;
+// }
+// console.log(fib(7));
+
+// callback функция
+function reallyDone() {
+  console.log(`I'm really done`);
 }
-console.log(fib(7));
+
+function done() {
+  console.log(`I'm done`);
+}
+function learnJS(lang, callback, callback2) {
+  console.log(`I'm learning ${lang}`);
+  callback();
+  callback2();
+}
+learnJS('JavaScript', done, reallyDone);
