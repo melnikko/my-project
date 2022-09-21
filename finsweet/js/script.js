@@ -473,16 +473,45 @@
 // console.log(fib(7));
 
 // callback функция
-function reallyDone() {
-  console.log(`I'm really done`);
-}
+// function reallyDone() {
+//   console.log(`I'm really done`);
+// }
 
-function done() {
-  console.log(`I'm done`);
-}
-function learnJS(lang, callback, callback2) {
-  console.log(`I'm learning ${lang}`);
-  callback();
-  callback2();
-}
-learnJS('JavaScript', done, reallyDone);
+// function done() {
+//   console.log(`I'm done`);
+// }
+// function learnJS(lang, callback, callback2) {
+//   console.log(`I'm learning ${lang}`);
+//   callback();
+//   callback2();
+// }
+// learnJS('JavaScript', done, reallyDone);
+
+// let obj = {
+//   count: 1,
+//   movies: ['Lola', 'Kola', 'Mola'],
+//   actors: {
+//     name: 'Kostia',
+//     surname: 'Melnyk'
+//   },
+//   genres: [],
+//   privat: false
+// };
+// let counter = 0;
+// for (let key in obj) { // цикл который перебирает ключи в obj
+//   console.log(`Key ${key} Conditon ${obj[key]}`); // выводит ключи и значение
+//   counter++
+// };
+
+// let {name, surname} = obj.actors;
+// console.log(name);
+
+// // console.log(obj['count']);
+
+let arr = [1, 2, 4, 5, 10, 25];
+
+arr.forEach(function(value, key){
+  console.log(`${value * key}`)
+}); 
+arr.pop();
+console.log(arr);
