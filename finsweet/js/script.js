@@ -508,10 +508,29 @@
 
 // // console.log(obj['count']);
 
-let arr = [1, 2, 4, 5, 10, 25];
+// let arr = [1, 2, 4, 5, 10, 25];
 
-arr.forEach(function(value, key){
-  console.log(`${value * key}`)
-}); 
-arr.pop();
-console.log(arr);
+// arr.forEach(function(value, key){
+//   console.log(`${value * key}`)
+// }); 
+// arr.pop();
+// console.log(arr);
+
+let arr = [1, 2, 4, 5, 10, 25, 45, 47, 54, 59, 66, 70, 75];
+
+function binerySearch (item, list) {
+  let low = 0,
+      high = list.length - 1,
+      mid;
+
+  while (low <= high) {
+    mid = Math.floor((low + high) / 2);
+    guess = list[mid];
+    if (guess === item) return mid;
+    else if (guess > item) high = mid - 1 
+    else low = mid + 1
+  }
+}
+
+console.log(binerySearch(1, arr));
+
