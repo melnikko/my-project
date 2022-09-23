@@ -516,21 +516,55 @@
 // arr.pop();
 // console.log(arr);
 
-let arr = [1, 2, 4, 5, 10, 25, 45, 47, 54, 59, 66, 70, 75];
 
-function binerySearch (item, list) {
-  let low = 0,
-      high = list.length - 1,
-      mid;
+// Binery search
+// let arr = [1, 2, 4, 5, 10, 25, 45, 47, 54, 59, 66, 70, 75];
 
-  while (low <= high) {
-    mid = Math.floor((low + high) / 2);
-    guess = list[mid];
-    if (guess === item) return mid;
-    else if (guess > item) high = mid - 1 
-    else low = mid + 1
+// function binerySearch (item, list) {
+//   let low = 0,
+//       high = list.length - 1,
+//       mid;
+
+//   while (low <= high) {
+//     mid = Math.floor((low + high) / 2);
+//     guess = list[mid];
+//     if (guess === item) return mid;
+//     else if (guess > item) high = mid - 1 
+//     else low = mid + 1
+//   }
+// }
+
+// console.log(binerySearch(1, arr));
+
+const obj = {
+  a: 5,
+  b: 1
+}
+// console.log(obj.a);
+function copy(mainObj) {
+  let objCopy = {};
+
+  for (let key in mainObj) {
+    objCopy[key] = mainObj[key]
+    console.log(objCopy)
+  }
+  return objCopy;
+}
+;
+// console.log(copy(obj));
+
+const obj2 = {
+  x: 22,
+  y: 105,
+  w: {
+    a: 1,
+    b: 2
   }
 }
+// console.log(obj2);
+let combinedObj = Object.assign({},obj2);
+combinedObj.w.b = 10;
+console.log(obj2);
+console.log(combinedObj);
 
-console.log(binerySearch(1, arr));
 
