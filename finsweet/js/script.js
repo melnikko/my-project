@@ -536,35 +536,120 @@
 
 // console.log(binerySearch(1, arr));
 
-const obj = {
-  a: 5,
-  b: 1
-}
-// console.log(obj.a);
-function copy(mainObj) {
-  let objCopy = {};
+// const obj = {
+//   a: 5,
+//   b: 1
+// }
+// // console.log(obj.a);
+// function copy(mainObj) {
+//   let objCopy = {};
 
-  for (let key in mainObj) {
-    objCopy[key] = mainObj[key]
-    console.log(objCopy)
-  }
-  return objCopy;
-}
-;
-// console.log(copy(obj));
+//   for (let key in mainObj) {
+//     objCopy[key] = mainObj[key]
+//     console.log(objCopy)
+//   }
+//   return objCopy;
+// }
+// ;
+// // console.log(copy(obj));
 
-const obj2 = {
-  x: 22,
-  y: 105,
-  w: {
-    a: 1,
-    b: 2
-  }
-}
+// const obj2 = {
+//   x: 22,
+//   y: 105,
+//   w: {
+//     a: 1,
+//     b: 2
+//   }
+// }
+// // console.log(obj2);
+// let combinedObj = Object.assign({},obj2);
+// combinedObj.w.b = 10;
 // console.log(obj2);
-let combinedObj = Object.assign({},obj2);
-combinedObj.w.b = 10;
-console.log(obj2);
-console.log(combinedObj);
+// console.log(combinedObj);
+
+// ========= My
+
+// const personalPlanPeter = {
+//   name: "Peter",
+//   age: "29",
+//   skills: {
+//       languages: ['ru', 'eng'],
+//       programmingLangs: {
+//           js: '20%',
+//           php: '10%'
+//       },
+//       exp: '1 month'
+//   },
+//   showAgeAndLangs: function (obj){
+//     let str = '';
+//     let {languages} = personalPlanPeter.skills;
+//     str += `Мне ${obj.age} и я владею языками: `
+
+//     languages.forEach(function(lang) {
+//       str += `${lang.toUpperCase()} `;
+//   });
+//     return str;
+//   }
+// };
+
+// function showExperience(obj) { 
+//   let {exp} = obj.skills;
+//   return exp;
+// }
+
+// function showProgrammingLangs(obj) {
+//   let {programmingLangs} = obj.skills;
+//   let str = '';
+//   for (let key in programmingLangs) {
+//     str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+//   }
+//   return str; 
+// }
+
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+// console.log(showExperience(personalPlanPeter));
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda', 'Kostia'];
+let fam = [];
+// console.log(fam.length);
+
+function showFamily(arr) {
+  let str = 'Семья состоит из: ';
+  if (arr.length > 0) {
+    for (let key in arr) {
+      str += `${arr[key]} `
+    }
+  } else str = 'Семья пуста';
+  return str;
+}
+console.log(showFamily(fam));
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+  arr.forEach(element => {
+    console.log(element.toLowerCase())
+  });
+}
+standardizeStrings(favoriteCities);
+
+const someString = 'This is some strange string';
+
+function reverse(string) {
+  let newString = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString
+}
+
+// console.log(reverse(someString));
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+console.log(reverseString(someString));
 
 
