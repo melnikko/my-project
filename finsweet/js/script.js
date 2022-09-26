@@ -611,45 +611,115 @@
 // console.log(showExperience(personalPlanPeter));
 // console.log(showProgrammingLangs(personalPlanPeter));
 
-const family = ['Peter', 'Ann', 'Alex', 'Linda', 'Kostia'];
-let fam = [];
-// console.log(fam.length);
+// const family = ['Peter', 'Ann', 'Alex', 'Linda', 'Kostia'];
+// let fam = [];
+// // console.log(fam.length);
 
-function showFamily(arr) {
-  let str = 'Семья состоит из: ';
-  if (arr.length > 0) {
-    for (let key in arr) {
-      str += `${arr[key]} `
-    }
-  } else str = 'Семья пуста';
-  return str;
+// function showFamily(arr) {
+//   let str = 'Семья состоит из: ';
+//   if (arr.length > 0) {
+//     for (let key in arr) {
+//       str += `${arr[key]} `
+//     }
+//   } else str = 'Семья пуста';
+//   return str;
+// }
+// console.log(showFamily(fam));
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+//   arr.forEach(element => {
+//     console.log(element.toLowerCase())
+//   });
+// }
+// standardizeStrings(favoriteCities);
+
+// const someString = 'This is some strange string';
+
+// function reverse(string) {
+//   let newString = '';
+//   for (let i = string.length - 1; i >= 0; i--) {
+//     newString += string[i];
+//   }
+//   return newString
+// }
+
+// function reverseString(str) {
+//   return str.split("").reverse().join("");
+// }
+// console.log(reverseString(someString));
+
+
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// let currencies = [...baseCurrencies,...additionalCurrencies];
+
+// function availableCurr(allCurrencies, unavaible) {
+//   let str = 'Доступные валюты:\n';
+//   allCurrencies.forEach(function(curr, i) {
+//     if (curr !== unavaible) {
+//       str += `${curr}\n`
+//     }
+//   });
+//   if (allCurrencies.length === 0) {
+//     str = 'Нет доступных валют';
+//   }
+
+//   return str;
+// }
+
+// console.log(availableCurr(currencies));
+
+// const soldier = {
+//   height: 180,
+//   weigth: 88,
+//   city: 'New York',
+//   age: 29
+// };
+
+// const david = Object.create(soldier);
+// Object.setPrototypeOf(david, soldier);
+
+// console.log(david.height);
+
+const shoppingMallData = {
+  shops: [
+      {
+          width: 10,
+          length: 5
+      },
+      {
+          width: 15,
+          length: 7
+      },
+      {
+          width: 20,
+          length: 5
+      },
+      {
+          width: 8,
+          length: 10
+      }
+  ],
+  height: 5,
+  moneyPer1m3: 30,
+  budget: 50000
 }
-console.log(showFamily(fam));
 
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
-
-function standardizeStrings(arr) {
-  arr.forEach(element => {
-    console.log(element.toLowerCase())
+function isBudgetEnough(arr) {
+  let squreSumm = 0;
+  arr.shops.forEach((element, i) => {
+    squreSumm += element.width * element.length;
   });
+  let volume = arr.height * squreSumm;
+
+  if (arr.budget - (volume * arr.moneyPer1m3) >= 0) {
+    console.log('Бюджета достаточно');
+  } else console.log('Бюджета не достаточно');
 }
-standardizeStrings(favoriteCities);
+isBudgetEnough(shoppingMallData);
 
-const someString = 'This is some strange string';
 
-function reverse(string) {
-  let newString = '';
-  for (let i = string.length - 1; i >= 0; i--) {
-    newString += string[i];
-  }
-  return newString
-}
-
-// console.log(reverse(someString));
-
-function reverseString(str) {
-  return str.split("").reverse().join("");
-}
-console.log(reverseString(someString));
 
 
