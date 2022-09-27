@@ -720,27 +720,59 @@
 // }
 // isBudgetEnough(shoppingMallData);
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Kostia'];
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Kostia'];
 
-function sortStudentsByGroups(arr) {
-    arr.sort();
-    const a = [], b = [], c = [], rest = [];
+// function sortStudentsByGroups(arr) {
+//     arr.sort();
+//     const a = [], b = [], c = [], rest = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (i < 3) {
-            a.push(arr[i]);
-        } else if (i < 6) {
-            b.push(arr[i]);
-        } else if (i < 9) {
-            c.push(arr[i]);
-        } else {
-            rest.push(arr[i]);
-        }
-    }
-    console.log([a,b,c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`]);
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i < 3) {
+//             a.push(arr[i]);
+//         } else if (i < 6) {
+//             b.push(arr[i]);
+//         } else if (i < 9) {
+//             c.push(arr[i]);
+//         } else {
+//             rest.push(arr[i]);
+//         }
+//     }
+//     console.log([a,b,c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`]);
+// }
+
+// sortStudentsByGroups(students);
+
+// let number = 5;
+
+// function logNum() {
+//   // let number = 10;
+//   console.log(number);
+// }
+
+// number = 6;
+// logNum();
+
+// number = 8;
+// logNum();
+
+function createCounter() {
+  let counter = 0;
+
+  const myFunction = function() {
+    counter = counter + 1;
+    return counter;
+  }
+  return myFunction;
 }
+// createCounter();
+// console.log(counter);
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
 
-sortStudentsByGroups(students);
+console.log(increment());
+
 
 
 
