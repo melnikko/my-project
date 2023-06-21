@@ -1,8 +1,8 @@
 var tab11, role, hobby2, tab22, tab33;
 
 
-var we_tabs_next_button = '[bloc=next-tab-2]';
-    var we_tabs_prev_button = '[bloc=prev-tab-2]';
+var we_tabs_next_button = '#next-tab-2';
+    var we_tabs_prev_button = '#prev-tab-2';
     var we_tabs_active_class = 'active2';
 
     var we_activeTab,we_indexOfActiveTab, we_indexOfNextTab, we_indexOfPrevTab, we_prevTab, we_amountOfTabs, nextTab;
@@ -150,7 +150,3 @@ var we_tabs_next_button = '[bloc=next-tab-2]';
       $($('[data-w-tab=tab33]')).attr('prev-tab',we_activeTab);
 
       });
-
-
-
-
