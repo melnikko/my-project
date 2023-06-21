@@ -1,9 +1,9 @@
-var tab11, role, tab22;
+var tab11, role, hobby2, tab22, tab33;
 
 
 var we_tabs_next_button = '[bloc=next-tab-2]';
     var we_tabs_prev_button = '[bloc=prev-tab-2]';
-    var we_tabs_active_class = 'active';
+    var we_tabs_active_class = 'active2';
 
     var we_activeTab,we_indexOfActiveTab, we_indexOfNextTab, we_indexOfPrevTab, we_prevTab, we_amountOfTabs, nextTab;
 
@@ -106,6 +106,51 @@ var we_tabs_next_button = '[bloc=next-tab-2]';
       $($('[data-w-tab=tab22]')).attr('prev-tab',we_activeTab);
 
       });
+    $("[name=hobby2]").on("input", function () {
+    hobby2 = getValueFromInput("hobby2");
+
+      nextTab = 'tab33';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=tab33]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=hobby2]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      hobby2 = getValueFromInput("hobby2");
+
+      nextTab = 'tab33';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=tab33]')).attr('prev-tab',we_activeTab);
+
+      });
+
 
 
 
