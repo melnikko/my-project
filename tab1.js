@@ -1,5 +1,3 @@
-
-// FIRST TAB =======================================================
 var tab1, level, hobby, tab2, client_goal, tab3, experience, tab4, budget, tab5, selectbox, tab6, tab7;
 
 
