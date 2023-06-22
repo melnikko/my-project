@@ -1,4 +1,4 @@
-var CHECKBOX, budget, LEVEL, SELECTBOX, tab6;
+var CHECKBOX, LEVEL, SELECTBOX, HOBBY, HOBBY_2;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -148,10 +148,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
 
         }
 });
-    $("[name=budget]").on("input", function () {
-    budget = getValueFromInput("budget");
+    $("[name=LEVEL]").on("input", function () {
+    LEVEL = getValueFromInput("LEVEL");
 
-      nextTab = 'tab6';
+      nextTab = 'HOBBY';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -166,15 +166,15 @@ var we_tabs_next_button = '[bloc=next-tab]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=tab6]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=HOBBY]')).attr('prev-tab',we_activeTab);
 
       });
 
-    $("[name=budget]").parent("label.w-radio").on("click", function () {
+    $("[name=LEVEL]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      budget = getValueFromInput("budget");
+      LEVEL = getValueFromInput("LEVEL");
 
-      nextTab = 'tab6';
+      nextTab = 'HOBBY';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -189,6 +189,50 @@ var we_tabs_next_button = '[bloc=next-tab]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=tab6]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=HOBBY]')).attr('prev-tab',we_activeTab);
+
+      });
+    $("[name=SELECTBOX]").on("input", function () {
+    SELECTBOX = getValueFromInput("SELECTBOX");
+
+      nextTab = 'HOBBY_2';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=HOBBY_2]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=SELECTBOX]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      SELECTBOX = getValueFromInput("SELECTBOX");
+
+      nextTab = 'HOBBY_2';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=HOBBY_2]')).attr('prev-tab',we_activeTab);
 
       });
