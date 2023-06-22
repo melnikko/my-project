@@ -1,4 +1,4 @@
-var SELECTBOX, CHECKBOX, HOBBY_2, LEVEL, EXPERIENCE_2, HOBBY, BUDGET_2, CLIENT_ALT_GOAL, SELECTBOX_2_2, EXPERIENCE, BUDGET, last, SELECTBOX_2;
+var CHECKBOX, LEVEL, HOBBY, SELECTBOX, CLIENT_ALT_GOAL, EXPERIENCE, BUDGET, SELECTBOX_2, last, HOBBY_2, EXPERIENCE_2, BUDGET_2, SELECTBOX_2_2;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -412,8 +412,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=last]')).attr('prev-tab',we_activeTab);
 
       });
-
-$("[name=SELECTBOX]").on("input", function () {
+    $("[name=SELECTBOX]").on("input", function () {
     SELECTBOX = getValueFromInput("SELECTBOX");
 
       nextTab = 'HOBBY_2';
