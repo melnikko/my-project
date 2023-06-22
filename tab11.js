@@ -1,8 +1,8 @@
 var tab1, level, hobby, tab2, client_goal, tab3, experience, tab4, budget, tab5, selectbox, tab6, tab7;
 
 
-var we_tabs_next_button = '[bloc=next-tab]';
-    var we_tabs_prev_button = '[bloc=prev-tab]';
+var we_tabs_next_button = '#next-tab';
+    var we_tabs_prev_button = '#prev-tab';
     var we_tabs_active_class = 'active';
 
     var we_activeTab,we_indexOfActiveTab, we_indexOfNextTab, we_indexOfPrevTab, we_prevTab, we_amountOfTabs, nextTab;
