@@ -64,7 +64,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $(tab_link).addClass("w--current");
     }$("[name=CHECKBOX]").on("input", function () {
     CHECKBOX = getValueFromInput("CHECKBOX");
-      if ($("[name=CHECKBOX]").val() == 1) {
+      if (CHECKBOX == 1) {
 
         nextTab = 'LEVEL';
         we_activeTab = $(".w--tab-active").attr("data-w-tab");
@@ -108,7 +108,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
     $("[name=CHECKBOX]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
       CHECKBOX = getValueFromInput("CHECKBOX");
-        if ($("[name=CHECKBOX]").val() == 1) {
+        if (CHECKBOX == 1) {
 
         nextTab = 'LEVEL';
         we_activeTab = $(".w--tab-active").attr("data-w-tab");
