@@ -1,4 +1,4 @@
-var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, CELECTBOX, last;
+var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, SELECTBOX, last;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -241,7 +241,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
     $("[name=SELECTBOX_2]").on("input", function () {
     SELECTBOX_2 = getValueFromInput("SELECTBOX_2");
 
-      nextTab = 'CELECTBOX';
+      nextTab = 'SELECTBOX';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -256,7 +256,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=CELECTBOX]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=SELECTBOX]')).attr('prev-tab',we_activeTab);
 
       });
 
@@ -264,7 +264,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       clickedRadioButtonValue = $("input", this).val();
       SELECTBOX_2 = getValueFromInput("SELECTBOX_2");
 
-      nextTab = 'CELECTBOX';
+      nextTab = 'SELECTBOX';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -279,11 +279,11 @@ var we_tabs_next_button = '[bloc=next-tab]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=CELECTBOX]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=SELECTBOX]')).attr('prev-tab',we_activeTab);
 
       });
-    $("[name=CELECTBOX]").on("input", function () {
-    CELECTBOX = getValueFromInput("CELECTBOX");
+    $("[name=SELECTBOX]").on("input", function () {
+    SELECTBOX = getValueFromInput("SELECTBOX");
 
       nextTab = 'last';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
@@ -304,9 +304,9 @@ var we_tabs_next_button = '[bloc=next-tab]';
 
       });
 
-    $("[name=CELECTBOX]").parent("label.w-radio").on("click", function () {
+    $("[name=SELECTBOX]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      CELECTBOX = getValueFromInput("CELECTBOX");
+      SELECTBOX = getValueFromInput("SELECTBOX");
 
       nextTab = 'last';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
