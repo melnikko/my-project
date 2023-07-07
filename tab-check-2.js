@@ -194,7 +194,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=BUDGET]')).attr('prev-tab',we_activeTab);
 
       });
-    $('.fs_checkbox-1_field').on('click',function() {
+    $('[bloc=next-tab]').on('click',function() {
   if($('.w--tab-active').attr('data-w-tab')=='BUDGET') {
 
         nextTab = 'SELECTBOX_2';
