@@ -1,4 +1,4 @@
-var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, first_tab, last;
+var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, last;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -195,7 +195,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
 
       });
     $('.fs_checkbox-1_field').on('click',function() {
-  if($('.w--tab-active').attr('data-w-tab')=='first_tab') {
+  if($('.w--tab-active').attr('data-w-tab')=='BUDGET') {
 
         nextTab = 'SELECTBOX_2';
         we_activeTab = $(".w--tab-active").attr("data-w-tab");
