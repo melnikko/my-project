@@ -1,4 +1,4 @@
-var LEVEL, HOBBY, CLIENT_ALT_GOAL, checkbox, BUDGET, SELECTBOX_2, last;
+var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, first_tab, last;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -194,51 +194,29 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=BUDGET]')).attr('prev-tab',we_activeTab);
 
       });
-    $("[name=checkbox]").on("input", function () {
-    checkbox = getValueFromInput("checkbox");
+    $('.fs_checkbox-1_field').on('click',function() {
+  if($('.w--tab-active').attr('data-w-tab')=='first_tab') {
 
-      nextTab = 'SELECTBOX_2';
-      we_activeTab = $(".w--tab-active").attr("data-w-tab");
-      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
-      we_indexOfNextTab = we_indexOfActiveTab + 1;
-      we_indexOfPrevTab = we_indexOfActiveTab - 1;
-      we_prevTab = tabList[we_indexOfPrevTab];
-      we_amountOfTabs = tabList.length;
+        nextTab = 'SELECTBOX_2';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
 
-      if (we_indexOfNextTab < we_amountOfTabs) {
-        tabList[we_indexOfNextTab] = nextTab;
-      } else {
-        tabList.push(nextTab);
-      }
-      $(we_tabs_next_button).addClass(we_tabs_active_class);
-      $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=SELECTBOX_2]')).attr('prev-tab',we_activeTab);
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=SELECTBOX_2]')).attr('prev-tab',we_activeTab);
 
-      });
 
-    $("[name=checkbox]").parent("label.w-radio").on("click", function () {
-      clickedRadioButtonValue = $("input", this).val();
-      checkbox = getValueFromInput("checkbox");
-
-      nextTab = 'SELECTBOX_2';
-      we_activeTab = $(".w--tab-active").attr("data-w-tab");
-      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
-      we_indexOfNextTab = we_indexOfActiveTab + 1;
-      we_indexOfPrevTab = we_indexOfActiveTab - 1;
-      we_prevTab = tabList[we_indexOfPrevTab];
-      we_amountOfTabs = tabList.length;
-
-      if (we_indexOfNextTab < we_amountOfTabs) {
-        tabList[we_indexOfNextTab] = nextTab;
-      } else {
-        tabList.push(nextTab);
-      }
-      $(we_tabs_next_button).addClass(we_tabs_active_class);
-      $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=SELECTBOX_2]')).attr('prev-tab',we_activeTab);
-
-      });
-    $("[name=SELECTBOX_2]").on("input", function () {
+      }});
+$("[name=SELECTBOX_2]").on("input", function () {
     SELECTBOX_2 = getValueFromInput("SELECTBOX_2");
 
       nextTab = 'last';
