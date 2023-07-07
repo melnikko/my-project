@@ -1,4 +1,4 @@
-var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, last;
+var LEVEL, COUNTRY, HOBBY, CLIENT_ALT_GOAL, SELECTBOX_2, last;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -65,6 +65,50 @@ var we_tabs_next_button = '[bloc=next-tab]';
     }$("[name=LEVEL]").on("input", function () {
     LEVEL = getValueFromInput("LEVEL");
 
+      nextTab = 'COUNTRY';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=COUNTRY]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=LEVEL]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      LEVEL = getValueFromInput("LEVEL");
+
+      nextTab = 'COUNTRY';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=COUNTRY]')).attr('prev-tab',we_activeTab);
+
+      });
+    $("[name=COUNTRY]").on("input", function () {
+    COUNTRY = getValueFromInput("COUNTRY");
+
       nextTab = 'HOBBY';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
@@ -84,9 +128,9 @@ var we_tabs_next_button = '[bloc=next-tab]';
 
       });
 
-    $("[name=LEVEL]").parent("label.w-radio").on("click", function () {
+    $("[name=COUNTRY]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      LEVEL = getValueFromInput("LEVEL");
+      COUNTRY = getValueFromInput("COUNTRY");
 
       nextTab = 'HOBBY';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
@@ -153,7 +197,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
     $("[name=CLIENT_ALT_GOAL]").on("input", function () {
     CLIENT_ALT_GOAL = getValueFromInput("CLIENT_ALT_GOAL");
 
-      nextTab = 'BUDGET';
+      nextTab = 'SELECTBOX_2';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -168,7 +212,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=BUDGET]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=SELECTBOX_2]')).attr('prev-tab',we_activeTab);
 
       });
 
@@ -176,7 +220,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       clickedRadioButtonValue = $("input", this).val();
       CLIENT_ALT_GOAL = getValueFromInput("CLIENT_ALT_GOAL");
 
-      nextTab = 'BUDGET';
+      nextTab = 'SELECTBOX_2';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -191,32 +235,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=BUDGET]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=SELECTBOX_2]')).attr('prev-tab',we_activeTab);
 
       });
-    $('.form-question').on('click',function() {
-  if($('.w--tab-active').attr('data-w-tab')=='BUDGET') {
-
-        nextTab = 'SELECTBOX_2';
-        we_activeTab = $(".w--tab-active").attr("data-w-tab");
-        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
-        we_indexOfNextTab = we_indexOfActiveTab + 1;
-        we_indexOfPrevTab = we_indexOfActiveTab - 1;
-        we_prevTab = tabList[we_indexOfPrevTab];
-        we_amountOfTabs = tabList.length;
-
-        if (we_indexOfNextTab < we_amountOfTabs) {
-          tabList[we_indexOfNextTab] = nextTab;
-        } else {
-          tabList.push(nextTab);
-        }
-        $(we_tabs_next_button).addClass(we_tabs_active_class);
-        $(".w--tab-active").attr('next-tab',nextTab);
-        $($('[data-w-tab=SELECTBOX_2]')).attr('prev-tab',we_activeTab);
-
-
-      }});
-$("[name=SELECTBOX_2]").on("input", function () {
+    $("[name=SELECTBOX_2]").on("input", function () {
     SELECTBOX_2 = getValueFromInput("SELECTBOX_2");
 
       nextTab = 'last';
