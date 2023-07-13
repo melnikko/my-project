@@ -282,3 +282,9 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=last]')).attr('prev-tab',we_activeTab);
 
       });
+    if($('.w--tab-active').attr('data-w-tab')=='last') {
+        $('.next-btn').css({
+    'display':'none',
+  });
+
+    }
