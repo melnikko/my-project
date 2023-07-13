@@ -258,12 +258,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $(".w--tab-active").attr('next-tab',nextTab);
       $($('[data-w-tab=last]')).attr('prev-tab',we_activeTab);
 
-      if($('.w--tab-active').attr('data-w-tab')=='last') {
-          $('.next-btn').css({
-      'display':'none',
-    });
-
-      }});
+      });
 
     $("[name=SELECTBOX_2]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
@@ -286,9 +281,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $(".w--tab-active").attr('next-tab',nextTab);
       $($('[data-w-tab=last]')).attr('prev-tab',we_activeTab);
 
-      if($('.w--tab-active').attr('data-w-tab')=='last') {
-          $('.next-btn').css({
-      'display':'none',
-    });
+      });
+    if($('.w--tab-active').attr('data-w-tab')=='last') {
+        $('[bloc=next-tab]').css({
+    'opacity':'0',
+  });
 
-      }});
+    }
