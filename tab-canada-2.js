@@ -1,4 +1,4 @@
-var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, last;
+var LEVEL, last, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -62,21 +62,6 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $(tab).addClass("w--tab-active");
       $(tab_link).siblings("a").removeClass("w--current");
       $(tab_link).addClass("w--current");
-    }if($('.w--tab-active').attr('data-w-tab')=='LEVEL') {
-        $('.step-text').text('Step 2');
-
-    }if($('.w--tab-active').attr('data-w-tab')=='HOBBY') {
-        $('.step-text').text('Step 3');
-
-    }if($('.w--tab-active').attr('data-w-tab')=='CLIENT_ALT_GOAL') {
-        $('.step-text').text('Step 4');
-
-    }if($('.w--tab-active').attr('data-w-tab')=='BUDGET') {
-        $('.step-text').text('Step 5');
-
-    }if($('.w--tab-active').attr('data-w-tab')=='SELECTBOX_2') {
-        $('.step-text').text('Step 6');
-
     }if($('.w--tab-active').attr('data-w-tab')=='last') {
         $('.next-btn').addClass('none');
 
