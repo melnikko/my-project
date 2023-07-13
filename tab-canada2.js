@@ -109,7 +109,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=HOBBY]')).attr('prev-tab',we_activeTab);
 
       });
-    $("[name=HOBBY]").on("input", function () {
+    if($('.w--tab-active').attr('data-w-tab')=='HOBBY') {
+        $('.step-text').text('Step 3');
+
+    }$("[name=HOBBY]").on("input", function () {
     HOBBY = getValueFromInput("HOBBY");
 
       nextTab = 'CLIENT_ALT_GOAL';
@@ -153,7 +156,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=CLIENT_ALT_GOAL]')).attr('prev-tab',we_activeTab);
 
       });
-    $("[name=CLIENT_ALT_GOAL]").on("input", function () {
+    if($('.w--tab-active').attr('data-w-tab')=='CLIENT_ALT_GOAL') {
+        $('.step-text').text('Step 4');
+
+    }$("[name=CLIENT_ALT_GOAL]").on("input", function () {
     CLIENT_ALT_GOAL = getValueFromInput("CLIENT_ALT_GOAL");
 
       nextTab = 'BUDGET';
@@ -197,7 +203,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=BUDGET]')).attr('prev-tab',we_activeTab);
 
       });
-    $("[name=BUDGET]").on("input", function () {
+    if($('.w--tab-active').attr('data-w-tab')=='BUDGET') {
+        $('.step-text').text('Step 5');
+
+    }$("[name=BUDGET]").on("input", function () {
     BUDGET = getValueFromInput("BUDGET");
 
       nextTab = 'SELECTBOX_2';
@@ -241,7 +250,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=SELECTBOX_2]')).attr('prev-tab',we_activeTab);
 
       });
-    $("[name=SELECTBOX_2]").on("input", function () {
+    if($('.w--tab-active').attr('data-w-tab')=='SELECTBOX_2') {
+        $('.step-text').text('Step 6');
+
+    }$("[name=SELECTBOX_2]").on("input", function () {
     SELECTBOX_2 = getValueFromInput("SELECTBOX_2");
 
       nextTab = 'last';
@@ -285,3 +297,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=last]')).attr('prev-tab',we_activeTab);
 
       });
+    if($('.w--tab-active').attr('data-w-tab')=='last') {
+        $('.next-btn').addClass('none');
+
+    }
