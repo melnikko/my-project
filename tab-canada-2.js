@@ -106,7 +106,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=HOBBY]')).attr('prev-tab',we_activeTab);
 
       });
-    $("[name=HOBBY]").on("input", function () {
+    if($('.w--tab-active').attr('data-w-tab')=='HOBBY') {
+        $('[bloc=next-tab]').text('Step 2');
+
+    }$("[name=HOBBY]").on("input", function () {
     HOBBY = getValueFromInput("HOBBY");
 
       nextTab = 'CLIENT_ALT_GOAL';
@@ -282,9 +285,3 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=last]')).attr('prev-tab',we_activeTab);
 
       });
-    if($('.w--tab-active').attr('data-w-tab')=='last') {
-        $('[bloc=next-tab]').css({
-    'opacity':'0',
-  });
-
-    }
