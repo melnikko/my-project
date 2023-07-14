@@ -284,14 +284,14 @@ var we_tabs_next_button = '[bloc=next-tab]';
       });
     $('[bloc=next-tab]').on('click',function() {
   if($('.w--tab-active').attr('data-w-tab')=='last') {
-          $('[bloc=next-tab]').css({
+          $('[bloc=buttons]').css({
       'display':'none',
     });
 
       }});
 $('[bloc=prev-tab]').on('click',function() {
   if($('.w--tab-active').attr('data-w-tab')=='SELECTBOX_2') {
-          $('[bloc=next-tab]').css({
+          $('[bloc=buttons]').css({
       'display':'flex',
     });
 
