@@ -1,4 +1,4 @@
-var LEVEL, last, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2;
+var LEVEL, HOBBY, CLIENT_ALT_GOAL, BUDGET, SELECTBOX_2, last;
 
 
 var we_tabs_next_button = '[bloc=next-tab]';
@@ -62,9 +62,6 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $(tab).addClass("w--tab-active");
       $(tab_link).siblings("a").removeClass("w--current");
       $(tab_link).addClass("w--current");
-    }if($('.w--tab-active').attr('data-w-tab')=='last') {
-        $(we_tabs_next_button).css({'display':'none',});
-
     }$("[name=LEVEL]").on("input", function () {
     LEVEL = getValueFromInput("LEVEL");
 
@@ -285,3 +282,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $($('[data-w-tab=last]')).attr('prev-tab',we_activeTab);
 
       });
+    $('[bloc=next-tab]').on('click',function() {
+  if($('.w--tab-active').attr('data-w-tab')=='last') {
+          $('[bloc=next-tab]').css({
+      'display':'none',
+    });
+
+      }});
