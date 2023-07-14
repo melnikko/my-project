@@ -63,7 +63,7 @@ var we_tabs_next_button = '[bloc=next-tab]';
       $(tab_link).siblings("a").removeClass("w--current");
       $(tab_link).addClass("w--current");
     }if($('.w--tab-active').attr('data-w-tab')=='last') {
-        $('.next-btn').addClass('none');
+        $('.next-btn').css({'display':'none',});
 
     }$("[name=LEVEL]").on("input", function () {
     LEVEL = getValueFromInput("LEVEL");
