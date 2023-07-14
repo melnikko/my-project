@@ -289,3 +289,10 @@ var we_tabs_next_button = '[bloc=next-tab]';
     });
 
       }});
+$('[bloc=prev-tab]').on('click',function() {
+  if($('.w--tab-active').attr('data-w-tab')=='last') {
+          $('[bloc=next-tab]').css({
+      'display':'flex',
+    });
+
+      }});
